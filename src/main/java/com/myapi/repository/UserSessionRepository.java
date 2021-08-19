@@ -18,7 +18,7 @@ public interface UserSessionRepository extends JpaRepository<UserSession,String>
     void createSession(@Param("email") String email,@Param("sessionid") String sessionid);
 
     @Modifying
-    @Query("delete UserSession us where us.userSessionPk=:userSessionPk")
+    @Query("delete from UserSession us where us.userSessionPk=:userSessionPk")
     @Transactional
     int deleteSession(UserSessionPk userSessionPk);
 }

@@ -36,7 +36,7 @@ public class AuthorizationFilter implements Filter {
         response.setHeader("Access-Control-Max-Age", "3600");
         response.setHeader("Access-Control-Allow-Headers",
                 "Origin, X-Requested-With, Content-Type, Accept, Key, Authorization");
-        if(!request.getRequestURL().toString().contains("/api/")){
+        if(!request.getRequestURL().toString().contains("/data/")){
             filterChain.doFilter(request,response);
         }
         String sessionid= request.getHeader("Authorization");

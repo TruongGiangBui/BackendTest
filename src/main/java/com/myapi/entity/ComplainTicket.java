@@ -14,7 +14,6 @@ import java.util.Date;
 public class ComplainTicket {
     @Id
     private String ticketid;
-    private int deptint;
     private String phonenumber;
     private String customeropinion;
     private Date timereceive;

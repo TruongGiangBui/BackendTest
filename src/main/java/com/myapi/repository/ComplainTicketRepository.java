@@ -20,12 +20,12 @@ public interface ComplainTicketRepository extends JpaRepository<ComplainTicket,S
     @Query("select ticket from ComplainTicket ticket where ticket.timereceive>=:fromdate and ticket.timereceive<=:todate")
     List<ComplainTicket> findComplainTicketByTimecreate(String fromdate,String todate);
     @Modifying
-    @Query(value = "insert into complainticket(ticketid,deptid,phonenumber,customeropinion,timereceive,answer,processingstatus,pocessingtime) " +
-            "values(:ticketid,:deptid,:phonenumber,:customeropinion,:timereceive,:answer,:processingstatus,:pocessingtime)",nativeQuery = true)
+    @Query(value = "insert into complainticket(ticketid,deptid,phonenumber,customeropinion,timereceive,answer,processingstatus,processingtime) " +
+            "values(:ticketid,:deptid,:phonenumber,:customeropinion,:timereceive,:answer,:processingstatus,:processingtime)",nativeQuery = true)
     @Transactional
     void insertComplainTicket(@Param("ticketid") String ticketid,@Param("deptid") int deptid,
                               @Param("phonenumber") String phonenumber,@Param("customeropinion") String opinion,
                               @Param("timereceive") Date timereceive,@Param("answer") String answer,
-                              @Param("processingstatus") boolean processingstatus,@Param("pocessingtime") Date pocessingtime );
+                              @Param("processingstatus") boolean processingstatus,@Param("processingtime") Date processingtime );
 
 }
